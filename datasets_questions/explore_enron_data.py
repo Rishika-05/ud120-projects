@@ -1,4 +1,4 @@
-#!/usr/bin/python3
+# !/usr/bin/python3
 
 """ 
     Starter code for exploring the Enron dataset (emails + finances);
@@ -19,3 +19,9 @@ import joblib
 
 enron_data = joblib.load(open("../final_project/final_project_dataset.pkl", "rb"))
 
+print(len(enron_data))
+count = 0
+for user in enron_data:
+    if enron_data[user]['poi'] == True:
+        count+=1
+print(count)
